@@ -20,3 +20,15 @@ for f in csv_files:
     print('Content:')
     print(df.head(10))
     print()
+
+
+---------------------------------------------------------------------------------
+
+def df_list():
+    filename_list = current_stage_files(PATH)
+    df_list = []
+    for file in filename_list:
+        df = pd.read_csv(PATH+file)
+        df.name = file
+        df_list.append(df)
+    return df_list
